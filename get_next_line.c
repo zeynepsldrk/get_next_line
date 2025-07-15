@@ -7,14 +7,14 @@ char *ft_left_str(char *buffer)
 	char *left_str;
 
 	i = 0;
-	while (buffer[i] != '\0' %% buffer[i] = '\n')
+	while (buffer[i] != '\0' && buffer[i] = '\n')
 		i++;
 	if (!buffer[i])
 	{
 		free(buffer);
 		return (NULL);
 	}
-	left_str = (char *)malloc(sizeof(char) * (i + 1));
+	left_str = (char *)malloc(sizeof(char) * (ft_strlen(buffer) - i + 1));
 	if (!left_str)
 		return (NULL);
 	i++;
@@ -72,6 +72,7 @@ char *ft_get_buffer(int fd, char *buffer)
 		if (count == -1)
 		{
 			free(temp_buffer);
+			free(buffer);
 			return(NULL);
 		}
 		temp_buffer[count] = '\0';
