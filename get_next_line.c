@@ -84,7 +84,6 @@ char *ft_get_buffer(int fd, char *buffer)
 char *get_next_line(int fd)
 {
 	char *line;
-	char *new_buffer;
 	static char *buffer;
 
 	if(fd < 0 || BUFFER_SİZE <= 0)
