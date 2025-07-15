@@ -1,0 +1,19 @@
+#ifdefine GET_NEXT_LİNE_H
+# define GET_NEXT_LİNE_H
+
+#ifdefine BUFFER_SİZE
+# define BUFFER_SİZE 42
+#endif
+
+#include <stdlib.h>
+#include <unistd.h>
+
+char *get_next_line(int fd);
+char *ft_get_buffer(int fd, char *buffer);
+char *ft_get_line(char *buffer);
+char *ft_left_str(char *buffer);
+size_t ft_strlen(char *str);
+int ft_strchr(char *str);
+char *ft_strjoin(char *buffer, char *temp);
+
+#endif
