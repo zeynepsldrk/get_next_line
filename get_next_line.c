@@ -7,7 +7,7 @@ char *ft_left_str(char *buffer)
 	char *left_str;
 
 	i = 0;
-	while (buffer[i] != '\0' && buffer[i] = '\n')
+	while (buffer[i] != '\0' && buffer[i] != '\n')
 		i++;
 	if (!buffer[i])
 	{
@@ -62,13 +62,13 @@ char *ft_get_buffer(int fd, char *buffer)
 	int count; 
 	char *temp_buffer;
 
-	temp_buffer = malloc((sizeof(char)) * BUFFER_SİZE + 1);
+	temp_buffer = malloc((sizeof(char)) * BUFFER_SIZE + 1);
 	if (!temp_buffer)
 		return (NULL);
 	count = 1;
 	while (!ft_strchr(buffer) && count != 0)
 	{
-		count = read(fd, temp_buffer, BUFFER_SİZE);
+		count = read(fd, temp_buffer, BUFFER_SIZE);
 		if (count == -1)
 		{
 			free(temp_buffer);
@@ -87,7 +87,7 @@ char *get_next_line(int fd)
 	char *line;
 	static char *buffer;
 
-	if(fd < 0 || BUFFER_SİZE <= 0)
+	if(fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer = ft_get_buffer(fd , buffer);
 	if (!buffer)

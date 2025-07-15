@@ -1,8 +1,8 @@
-#ifdefine GET_NEXT_LİNE_H
-# define GET_NEXT_LİNE_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#ifdefine BUFFER_SİZE
-# define BUFFER_SİZE 42
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
 #endif
 
 #include <stdlib.h>
