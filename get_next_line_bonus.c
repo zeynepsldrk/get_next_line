@@ -93,6 +93,6 @@ char *get_next_line(int fd)
 	if (!buffer[fd])
 		return (NULL);
 	line = ft_get_line(buffer[fd]);
-	buffer = ft_left_str(buffer[fd]);
+	buffer[fd] = ft_left_str(buffer[fd]);
 	return (line);
 }
